@@ -171,3 +171,24 @@
     })
   }
 )
+;; Fee Structure Mapping
+(define-map transaction-fees
+  {
+    product-id: uint,
+    transaction-type: (string-ascii 50)
+  }
+  {
+    base-fee: uint,
+    dynamic-fee-multiplier: uint
+  }
+)
+
+;; Incentive Tracking
+(define-map stakeholder-incentives
+  principal
+  {
+    total-earned-incentives: uint,
+    pending-incentives: uint,
+    performance-score: uint
+  }
+)
