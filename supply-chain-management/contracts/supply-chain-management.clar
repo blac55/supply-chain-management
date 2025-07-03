@@ -192,3 +192,25 @@
     performance-score: uint
   }
 )
+;; Contract Upgrade Proposal
+(define-map upgrade-proposals
+  principal  ;; proposer
+  {
+    new-contract-address: principal,
+    votes-for: (list 10 principal),
+    votes-against: (list 10 principal),
+    proposal-status: bool
+  }
+)
+
+;; Notification Mapping
+(define-map notifications
+  principal
+  {
+    unread-notifications: (list 50 {
+      notification-type: (string-ascii 50),
+      message: (string-ascii 200),
+      timestamp: uint
+    })
+  }
+)
